@@ -1,5 +1,5 @@
-# 10:59
-#uvicorn app.main:app --reload
+# 11:35
+# uvicorn app.main:app --reload
 # fetch('http://localhost:8000/').then(res => res.json()).then(console.log)
 from fastapi import FastAPI
 from . import models
@@ -10,14 +10,15 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # sqlalchemy
 # not needed with alembic
-# models.Base.metadata.create_all(bind=engine)
+# disable this since alembic will the one now responsible for creating tables and such
+# models.Base.metadata.create_all(bind=engine) 
 
 app = FastAPI()
 
-# ["*"] if you want everyone to talk to your API
-# origins = ["https://www.google.com"]
-origins = ["*"]
 
+# cors settings
+# origins = ["https://www.google.com"] # allow only certain domain
+origins = ["*"] # allow all domain to talk to your API
 
 app.add_middleware(
     CORSMiddleware,
