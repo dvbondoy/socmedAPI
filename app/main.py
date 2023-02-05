@@ -1,4 +1,4 @@
-# 11:35
+# 12:05
 # uvicorn app.main:app --reload
 # fetch('http://localhost:8000/').then(res => res.json()).then(console.log)
 from fastapi import FastAPI
