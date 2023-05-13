@@ -19,14 +19,3 @@ def get_db():
         yield db
     finally:
         db.close()
-
-# while True:
-#     try:
-#         conn = psycopg2.connect(host='localhost', dbname='smapi', user='postgres', password='wholetsthedogsout')
-#         cursor = conn.cursor()
-#         print("Database connection was successful!")
-#         break
-#     except Exception as error:
-#         print("Database connection failed!")
-#         print("Error: ", error)
-#         time.sleep(3)
